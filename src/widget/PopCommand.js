@@ -113,6 +113,7 @@ define(
          * 命令栏浮动菜单
          * @param {HTMLElement} main    主元素
          * @param {Object} options 参数
+         * @param {HTMLElement} options.main  主元素
          * @param {string} options.datasource 数据源
          * options.datasource = [
          *     {
@@ -126,9 +127,9 @@ define(
          * @param {Function} options.onShow 当显示菜单时候的事件
          * @param {Function} options.onCommand 当触发命令时候的事件
          */
-        function PopCommand(main, options) {
-            this.main = $(main);
+        function PopCommand(options) {
             $.extend(this, options);
+            this.main = $(this.main);
             init.call(this);
         }
 

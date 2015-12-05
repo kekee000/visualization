@@ -1,4 +1,4 @@
-<h3>TreeView</h3>
+<h3>TreeView - PopCommand</h3>
 
 
 <div style="position:relative;height: 600px;">
@@ -35,6 +35,32 @@ require(['visualization/widget/TreeView', 'visualization/widget/PopCommand', 'da
             console.log(e);
         });
         treeView.render();
+
+        // 弹出菜单插件
+        var PopCommand = require('visualization/widget/PopCommand');
+        var popCommand = new PopCommand({
+            main: treeView.main,
+            itemSelector: 'treenode',
+            datasource: [
+                {
+                    title: '重命名',
+                    name: 'rename'
+                },
+                {
+                    title: '导出',
+                    name: 'export',
+                    items: [
+                        {
+                            name: 'export1',
+                            title: '属性和概念'
+                        }
+                    ]
+                }
+            ],
+            onCommand: function (e) {
+                console.log(e);
+            }
+        });
     });
 
     require('main').showCode(arguments.callee);
