@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前端可视化组件</title>
+    <link rel="stylesheet" href="./dep/prism.css">
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+<body>
+
+    <div class="menu-container">
+        <dl class="menu">
+            <dt>widget</dt>
+            <dd><a href="?widget$FlowView">FlowView.js</a></dd>
+            <dd><a href="?widget$TreeView">TreeView.js</a></dd>
+        </dl>
+    </div>
+
+    <div class="container">
+        loading....
+    </div>
+
+    <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/2-0-8/esl.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.10.0/jquery.min.js"></script>
+    <script src="./dep/prism.js"></script>
+    <script>
+        require.config({
+            'baseUrl': './src',
+            'packages': [
+            ],
+            'paths': {
+                'visualization': '../../src'
+            }
+        });
+        define('jquery', function () {
+            return window.jQuery;
+        });
+    </script>
+    <script>require(['main']);</script>
+</body>
+</html>

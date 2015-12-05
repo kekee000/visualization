@@ -1,0 +1,30 @@
+<h3>FlowView</h3>
+
+
+<div id="flow-view" class="flow-view"></div>
+
+<div class="result"></div>
+
+
+<pre><code id="code-container" class="language-javascript"></code></pre>
+
+<script>
+require(['visualization/widget/FlowView', 'datasource'], function () {
+
+    var FlowView = require('visualization/widget/FlowView');
+    require('datasource').get('flow-view', {}, function (data) {
+        var view = new FlowView({
+            main: '#flow-view',
+            datasource: data,
+            offsetY: 40
+        });
+        view.on('click', function (e) {
+            var node = view.getNode(e.node);
+            console.log(node);
+        });
+        view.render();
+    });
+
+    require('main').showCode(arguments.callee);
+});
+</script>

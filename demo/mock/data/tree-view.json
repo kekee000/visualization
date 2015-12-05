@@ -1,0 +1,158 @@
+{
+    "data": {
+        "id": "1",
+        "name": "教育",
+        "type": "1",
+        "children": [
+            {
+                "id": "2",
+                "name": "职业教育",
+                "type": "1",
+                "children": [
+                    {
+                        "id": "3",
+                        "name": "技能培训",
+                        "type": "1",
+                        "selected": true,
+                        "children": [
+                            {
+                                "id": "4",
+                                "name": "IT",
+                                "type": "1",
+                                "children": [
+                                    {
+                                        "id": "5",
+                                        "name": "IT认证",
+                                        "type": "2",
+                                        "conceptCount": "8"
+                                    },
+                                    {
+                                        "id": "6",
+                                        "name": "学习目的",
+                                        "type": "2",
+                                        "conceptCount": "4"
+                                    },
+                                    {
+                                        "id": "77",
+                                        "name": "学习难度",
+                                        "type": "2",
+                                        "expand": false,
+                                        "conceptCount": "6",
+                                        "children": [
+                                            {
+                                                "id": "8",
+                                                "name": "操作系统",
+                                                "type": "2",
+                                                "conceptCount": "11"
+                                            },
+                                            {
+                                                "id": "9",
+                                                "name": "计算机等级考试",
+                                                "type": "2",
+                                                "conceptCount": "4"
+                                            },
+                                            {
+                                                "id": "10",
+                                                "name": "计算机语言",
+                                                "type": "2",
+                                                "conceptCount": "82"
+                                            },
+                                            {
+                                                "id": "11",
+                                                "name": "设备",
+                                                "type": "2",
+                                                "conceptCount": "3"
+                                            },
+                                            {
+                                                "id": "12",
+                                                "name": "软件系统",
+                                                "type": "2",
+                                                "conceptCount": "32"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "13",
+                                        "name": "就业方向",
+                                        "type": "2",
+                                        "conceptCount": "49"
+                                    },
+                                    {
+                                        "id": "14",
+                                        "name": "应用方向",
+                                        "type": "2",
+                                        "conceptCount": "143"
+                                    },
+                                    {
+                                        "id": "15",
+                                        "name": "技术方向",
+                                        "type": "2",
+                                        "conceptCount": "24"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "16",
+                                "name": "上课时间",
+                                "type": "2",
+                                "conceptCount": "7"
+                            },
+                            {
+                                "id": "17",
+                                "name": "课程学制",
+                                "type": "2",
+                                "conceptCount": "47"
+                            },
+                            {
+                                "id": "18",
+                                "name": "课程形式",
+                                "type": "2",
+                                "conceptCount": "2"
+                            },
+                            {
+                                "id": "19",
+                                "name": "课程描述",
+                                "type": "2",
+                                "conceptCount": "13",
+                                "children": [
+                                    {
+                                        "id": "20",
+                                        "name": "课程特性2",
+                                        "type": "2",
+                                        "conceptCount": "3"
+                                    },
+                                    {
+                                        "id": "21",
+                                        "name": "课程目的",
+                                        "type": "2",
+                                        "conceptCount": "5"
+                                    },
+                                    {
+                                        "id": "22",
+                                        "name": "课程级别",
+                                        "type": "2",
+                                        "conceptCount": "4"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "23",
+                                "name": "课程特性",
+                                "type": "2",
+                                "conceptCount": "5"
+                            },
+                            {
+                                "id": "24",
+                                "name": "课程面向人群",
+                                "type": "2",
+                                "conceptCount": "4"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "status": 0,
+    "desc": ""
+}

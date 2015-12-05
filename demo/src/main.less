@@ -1,0 +1,51 @@
+/**
+ * 测试样式
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+.menu-container {
+   position: fixed;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   padding: 10px 0 10px 15px;
+   width: 220px;
+   border-right: 1px solid #ccc;
+
+   .menu {
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            padding-left: 2em;
+        }
+   }
+}
+
+.container {
+    margin-left: 260px;
+    min-height: 200px;
+}
+
+
+
+p[data-anchor] {
+    line-height: 400px;
+    background: #eee;
+    margin-top: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+@import '../../src/css/main.less';

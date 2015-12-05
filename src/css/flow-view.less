@@ -1,0 +1,119 @@
+
+// 流程图状态
+.flow-status() {
+    &[data-status] {
+        .linear-gradient-background (top, #ffffff, #f6f6f6, #ffffff);
+        &:hover {
+            .linear-gradient-background (top, #ffffff, #ddd, #ffffff);
+        }
+    }
+
+    &[data-status="running"] {
+        color: @flowview-font-lighten;
+        .linear-gradient-background (top, #29E81B, #36C348, #29E81B);
+        &:hover {
+            .linear-gradient-background (top, #36C348, #29E81B, #29E81B);
+        }
+    }
+
+    &[data-status="success"] {
+        color: @flowview-font-lighten;
+        .linear-gradient-background (top, #329032, #006400, #329032);
+        &:hover {
+            .linear-gradient-background (top, #006400, #329032, #006400);
+        }
+    }
+
+    &[data-status="fail"] {
+        color: @flowview-font-lighten;
+        .linear-gradient-background (top, #E43C3C, #CD1515, #E43C3C);
+        &:hover {
+            .linear-gradient-background (top, #8B1B1B, #CD1515, #E43C3C);
+        }
+    }
+}
+
+.flow-view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+    overflow: auto;
+    cursor: move;
+
+    flownode {
+        position: absolute;
+        width: 160px;
+        height: 50px;
+        box-sizing: border-box;
+        padding: 5px;
+        line-height: 16px;
+        color: @flowview-font-color;
+        cursor: pointer;
+        box-shadow: 1px 1px 3px #ddd;
+        border: 1px solid #CCC;
+        border-radius: 5px;
+        word-wrap: break-word;
+        div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        &.emphase {
+            box-shadow: 0px 0px 4px #0034FF;
+            border-color: blue;
+        }
+
+        .flow-status();
+    }
+
+
+
+
+    svg {
+        pointer-events: none;
+
+        path {
+            stroke: #ccc;
+            fill: none;
+        }
+
+        .arrow-view {
+            stroke: none;
+            fill: #333;
+        }
+    }
+
+    .svg-view {
+
+        &[data-type="back"] {
+            .line-view {
+                stroke: #A9CFEA;
+            }
+            .arrow-view {
+                fill: #0B8BE7;
+            }
+        }
+
+        &[data-type="same"] {
+            .line-view {
+                stroke: #F0EC99;
+            }
+            .arrow-view {
+                fill: #A3AD17;
+            }
+        }
+
+        &[data-status="emphase"] {
+            .line-view {
+                stroke: blue;
+            }
+            .arrow-view {
+                fill: blue;
+            }
+        }
+    }
+}

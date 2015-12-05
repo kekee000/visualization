@@ -1,0 +1,48 @@
+.pop-command-layer {
+    position: absolute;
+    z-index: 1000;
+    font-size: 13px;
+    line-height: 24px;
+    margin-top: 10px;
+    color: #333;
+    display: none;
+    transition: left 0.1s ease-out, top 0.1s ease-out;
+    -moz-transition: left 0.1s ease-out, top 0.1s ease-out; /* Firefox 4 */
+    -webkit-transition: left 0.1s ease-out, top 0.1s ease-out; /* Safari 和 Chrome */
+
+    ul {
+        .linear-gradient-background(top, #ffffff, #f6f6f6, #ffffff);
+        border: 1px solid #CCC;
+        white-space: nowrap;
+    }
+
+    li {
+        display: inline-block;
+        color: @treeview-base-color;
+        padding: 0 6px;
+        cursor: pointer;
+
+        >ul {
+            position: absolute;
+            display: none;
+            >li {
+                display: block;
+            }
+        }
+
+        &:hover {
+            color: #fff;
+            .linear-gradient-background(top, darken(@treeview-base-color, 5%), darken(@treeview-base-color, 10%), darken(@treeview-base-color, 5%));
+            >ul {
+                display: block;
+            }
+        }
+    }
+
+    li:last-child {
+        >ul {
+            width: 160px;
+            margin-left: -129px;
+        }
+    }
+}

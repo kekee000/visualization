@@ -1,0 +1,42 @@
+<h3>TreeView</h3>
+
+
+<div style="position:relative;height: 600px;">
+    <div id="tree-view" class="tree-view"></div>
+</div>
+<div class="result"></div>
+
+
+<pre><code id="code-container" class="language-javascript"></code></pre>
+
+<script>
+require(['visualization/widget/TreeView', 'datasource'], function () {
+
+    var TreeView = require('visualization/widget/TreeView');
+    require('datasource').get('tree-view', {}, function (data) {
+        var view = new TreeView({
+            main: '#tree-view',
+            datasource: data,
+            expandLevel: 2,
+            renderNode: function (node) {
+                return '<h4 ' + (!node.conceptCount ? 'class="only-property"' : '') + '>' + node.name + '</h4>'
+                    + (node.conceptCount ? '<a href="#id=' + node.id + '">'
+                    +   '概念(' + node.conceptCount + ')</a>' : '')
+                    + (node.children && node.children.length
+                        ? '<i class="arrow' + (false !== node.expand ? ' arrow-expand' : '') + '"></i>'
+                        : '');
+            },
+            renderNodeAttributes: function (node) {
+                return 'data-type="' + (+node.type === 2 ? 'property' : 'category') + '" '
+                    + 'data-id="' + node.id + '" ';
+            }
+        });
+        view.on('click', function (e) {
+            console.log(e);
+        });
+        view.render();
+    });
+
+    require('main').showCode(arguments.callee);
+});
+</script>

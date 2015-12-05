@@ -1,0 +1,100 @@
+.tree-view {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 0;
+    bottom: 10px;
+    -webkit-user-select: none;
+    overflow: auto;
+    cursor: move;
+
+    treenode {
+        position: absolute;
+        width: 120px;
+        height: 60px;
+        box-sizing: border-box;
+        padding: 5px;
+        line-height: 24px;
+        color: #333;
+        .linear-gradient-background (top, #fff, #f6f6f6, #fff);
+        box-shadow: 1px 1px 3px #ddd;
+        border: 1px solid #CCC;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            .linear-gradient-background (top, #fff, #ddd, #fff);
+        }
+
+        .arrow {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            right: -14px;
+            top: 50%;
+            margin-top: -5px;
+            border: 1px solid @treeview-base-color;
+            color: #999;
+            background: #fefefe;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:after {
+                content: '+';
+                font-family: Arial;
+                line-height: 6px;
+                vertical-align: 7px;
+            }
+        }
+
+        .arrow-expand {
+            text-indent: 2px;
+            &:after {
+                content: '-';
+                vertical-align: 9px;
+            }
+        }
+
+        .only-property {
+            line-height: 48px;
+        }
+
+        @bg-lighten: darken(@treeview-base-color, 5%);
+        @bg-darken: darken(@treeview-base-color, 15%);
+
+        &[data-type="property"] {
+            border: 1px solid @treeview-base-color;
+            color: white;
+            .linear-gradient-background (top, @bg-lighten, @bg-darken, @bg-lighten);
+
+            &:hover {
+                .linear-gradient-background (top, darken(@bg-lighten, 5%), darken(@bg-darken, 5%), darken(@bg-lighten, 5%));
+            }
+
+            a {
+                color: @treeview-font-color;
+                font-size: 13px;
+            }
+        }
+
+        &.cur {
+            border: 2px solid red;
+            color: red;
+        }
+    }
+
+
+
+    svg {
+        pointer-events: none;
+    }
+
+    .arrow-view {
+        fill: #333;
+    }
+
+    .line-view {
+        stroke: #ccc;
+    }
+
+}

@@ -1,0 +1,96 @@
+
+
+.ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ellipsis(@width) when (@width > 0px) {
+    width: @width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+//过渡
+.transition(@prop, @duration: 1s, @timing: ease, @delay: 0s) when not (@prop = transform){
+    -webkit-transition: @prop @duration @timing @delay;
+    -ms-transition: @prop @duration @timing @delay;
+    -moz-transition: @prop @duration @timing @delay;
+    transition: @prop @duration @timing @delay;
+}
+
+.transition(@prop, @duration: 1s, @timing: ease, @delay: 0s) when (@prop = transform){
+    -webkit-transition: -webkit-transform @duration @timing @delay;
+    -ms-transition: -ms-transform @duration @timing @delay;
+    -moz-transition: -moz-transform @duration @timing @delay;
+    transition: @prop @duration @timing @delay;
+}
+
+
+// 无图标线性渐变背景
+// @direction 渐变方向
+// @from-color 起始颜色
+// @to-color 终止颜色
+// @b-color 背景色
+.linear-gradient-background (
+    @direction:top, @from-color, @to-color, @b-color:transparent
+) {
+    @top: 0% 0%, 0% 100%;
+    @left: 0% 0%, 100% 0%;
+    @bottom: 0% 100%, 0% 0%;
+    @right: 100% 0%, 0% 0%;
+
+    background: @b-color;
+
+    // Safari 4-5, Chrome 1-9
+    background:
+        -webkit-gradient(linear, @@direction, from(@from-color), to(@to-color));
+
+    // Safari 5.1, Chrome 10+
+    background:
+        -webkit-linear-gradient(@direction, @from-color, @to-color);
+
+    // Firefox 3.6+
+    background:
+        -moz-linear-gradient(@direction, @from-color, @to-color);
+
+    // IE 10
+    background:
+        -ms-linear-gradient(@direction, @from-color, @to-color);
+
+    // Opera 11.10+
+    background:
+        -o-linear-gradient(@direction, @from-color, @to-color);
+}
+
+
+.scrollbar(@width) {
+    &::-webkit-scrollbar {
+        width: @width;
+    }
+
+    &::-webkit-scrollbar:horizontal{
+        height: @width;
+    }
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: rgba(134, 128, 128, 1);
+        -webkit-box-shadow: inset 0 0 6px rgba(15, 13, 13, 0.5);
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(169,169,169,0.4);
+    }
+}
+
