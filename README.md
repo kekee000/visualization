@@ -11,9 +11,9 @@ demo演示方法：
 
 ## FlowView.js 工作流组件
 
-使用方法：
-
 ![](https://camo.githubusercontent.com/20782605fac87228abe2bb2692a0f7b63ca5a213/687474703a2f2f6d6b77697365722e73696e616170702e636f6d2f65787465726e616c2f666c6f772e706e67)
+
+使用方法：
 
 ```javascript
     var FlowView = require('visualization/widget/FlowView');
