@@ -13,6 +13,8 @@ demo演示方法：
 
 使用方法：
 
+![](https://camo.githubusercontent.com/20782605fac87228abe2bb2692a0f7b63ca5a213/687474703a2f2f6d6b77697365722e73696e616170702e636f6d2f65787465726e616c2f666c6f772e706e67)
+
 ```javascript
     var FlowView = require('visualization/widget/FlowView');
     var view = new FlowView({
@@ -29,6 +31,8 @@ demo演示方法：
 
 
 ## TreeView.js 树组件
+
+![](https://camo.githubusercontent.com/71522a742666f0e4dc4fb91c77fb8ea3c15dcf42/687474703a2f2f6d6b77697365722e73696e616170702e636f6d2f65787465726e616c2f74726565766965772e706e67)
 
 使用方法：
 
